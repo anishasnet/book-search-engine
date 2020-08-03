@@ -1,22 +1,27 @@
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 
+//requirements
 const express = require('express');
 const path = require('path');
 const db = require('./config/connection');
 const routes = require('./routes');
 
+//importing typedefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');
 
+//creating port and express usage
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//creating apollo server
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware
 })
 
+//combine apollo server + express
 server.applyMiddleware({app});
 
 app.use(express.urlencoded({ extended: true }));
@@ -31,7 +36,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-app.use(routes);
+//app.use(routes);
 
 db.once('open', () => {
   app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));

@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 
+//getting 
 export const GET_ME = gql`
 {
     me {

@@ -35,6 +35,7 @@ const SignupForm = () => {
       console.error(e);
       setShowAlert(true);
     }
+  //form data is username, email, password 
   setUserFormData({
     username: '',
     email: '',

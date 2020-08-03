@@ -7,6 +7,7 @@ import Auth from '../utils/auth';
 import { useMutation } from '@apollo/react-hooks';
 import { LOGIN_USER } from '../utils/mutations';
 
+//log in form
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
@@ -14,11 +15,13 @@ const LoginForm = () => {
 
   const[loginUser] = useMutation(LOGIN_USER);
 
+  //on input changes
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
 
+  // when form is submitted
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
