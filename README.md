@@ -26,7 +26,7 @@ Here is what the application looks like upon loading:
 
 ## Application
 
-You can visit the deployed application at the following link: 
+You can visit the deployed application at the following link: https://anishasnet-book-search-engine.herokuapp.com/ 
 
 ## License
 
