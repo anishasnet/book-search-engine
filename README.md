@@ -34,7 +34,7 @@ This project is under no license.
 
 ## Contributing
 
-Current Contributors: Anisha Sinhs
+Current Contributors: Anisha Sinha
 
 ## Questions
 
